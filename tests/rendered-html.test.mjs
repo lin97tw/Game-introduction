@@ -42,10 +42,11 @@ test("keeps production assets and responsive behavior", async () => {
     access(new URL("../public/hero-original-v3.jpg", import.meta.url)),
     access(new URL("../public/og-v3.png", import.meta.url)),
   ]);
-  assert.match(page, /onPointerMove=\{moveScene\}/);
+  assert.match(page, /className="hero-static-art"/);
   assert.match(page, /className="hero-socials"/);
   assert.match(page, /socials\.map\(\(social\)/);
-  assert.match(page, /pointerType === "touch"/);
+  assert.doesNotMatch(page, /onPointerMove|moveScene|scene-layer|hero-sparks/);
+  assert.match(css, /hero-original-v3\.jpg/);
   assert.match(css, /@media \(max-width: 850px\)/);
   assert.match(css, /@media \(max-width: 480px\)/);
   assert.match(css, /prefers-reduced-motion: reduce/);
