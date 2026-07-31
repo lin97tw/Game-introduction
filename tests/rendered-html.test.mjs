@@ -27,7 +27,7 @@ test("server-renders the finished streamer profile", async () => {
   assert.match(html, /youtube\.com\/@yu\._2008-p7v/);
   assert.match(html, /tiktok\.com\/@_yu\._2008/);
   assert.match(html, /instagram\.com\/_yu\._2008/);
-  assert.match(html, /property="og:image" content="\/og-v2\.png"/);
+  assert.match(html, /property="og:image" content="\/og-v3\.png"/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|SkeletonPreview/);
 });
 
@@ -39,9 +39,8 @@ test("keeps production assets and responsive behavior", async () => {
   ]);
 
   await Promise.all([
-    access(new URL("../public/hero-nakroth-v2.png", import.meta.url)),
-    access(new URL("../public/hero-city-plate.png", import.meta.url)),
-    access(new URL("../public/og-v2.png", import.meta.url)),
+    access(new URL("../public/hero-original-v3.jpg", import.meta.url)),
+    access(new URL("../public/og-v3.png", import.meta.url)),
   ]);
   assert.match(page, /onPointerMove=\{moveScene\}/);
   assert.match(page, /className="hero-socials"/);

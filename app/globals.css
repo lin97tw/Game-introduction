@@ -20,19 +20,19 @@ nav a:hover { color: var(--cyan); }
 .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(3,11,23,.97) 0%, rgba(3,11,23,.82) 27%, rgba(3,11,23,.18) 67%, rgba(3,11,23,.25) 100%), linear-gradient(0deg, #07101d 0%, transparent 22%); }
 .hero-scene { position: absolute; z-index: -2; inset: -3%; overflow: hidden; perspective: 1200px; transform-style: preserve-3d; }
 .scene-surface { position: absolute; inset: 0; background-position: center; background-size: cover; background-repeat: no-repeat; will-change: transform,filter; }
-.scene-background { background-image: url('/hero-city-plate.png'); transform: translate3d(var(--bg-x),var(--bg-y),-30px) scale(1.08); animation: cityBreathe 12s ease-in-out infinite alternate; }
-.scene-layer { background-image: url('/hero-nakroth-v2.png'); filter: drop-shadow(0 0 8px rgba(72,216,255,.12)); }
-.mech-rear { z-index: 1; clip-path: polygon(43% 10%,79% 13%,90% 54%,73% 83%,43% 82%,33% 60%); transform-origin: 66% 39%; animation: mechRearServo 5.6s cubic-bezier(.45,.05,.55,.95) infinite alternate; }
-.cape-layer { z-index: 3; clip-path: polygon(34% 37%,72% 35%,75% 72%,40% 72%,29% 57%); transform-origin: 70% 48%; animation: capeFlow 3.4s ease-in-out infinite alternate; }
-.body-layer { z-index: 4; clip-path: polygon(62% 25%,79% 25%,83% 94%,56% 94%,55% 43%); transform-origin: 69% 88%; animation: bodyHover 4.2s ease-in-out infinite alternate; }
-.mech-front { z-index: 5; clip-path: polygon(36% 9%,65% 11%,67% 84%,33% 84%,29% 54%); transform-origin: 55% 38%; animation: mechFrontServo 4.8s cubic-bezier(.4,0,.6,1) infinite alternate; }
-.hair-layer { z-index: 6; clip-path: polygon(66% 25%,76% 24%,77% 44%,65% 44%); transform-origin: 71% 36%; animation: hairFloat 2.1s ease-in-out infinite alternate; filter: drop-shadow(0 0 9px rgba(200,240,255,.28)); }
+.scene-background { background-image: url('/hero-original-v3.jpg'); transform: translate3d(var(--bg-x),var(--bg-y),-30px) scale(1.08); animation: cityBreathe 12s ease-in-out infinite alternate; }
+.scene-layer { background-image: url('/hero-original-v3.jpg'); filter: drop-shadow(0 0 8px rgba(72,216,255,.12)); }
+.mech-rear { z-index: 1; clip-path: polygon(0 0,70% 0,73% 71%,41% 100%,0 100%); transform-origin: 26% 27%; animation: mechRearServo 5.6s cubic-bezier(.45,.05,.55,.95) infinite alternate; }
+.cape-layer { z-index: 3; clip-path: polygon(0 26%,58% 19%,69% 82%,0 91%); transform-origin: 48% 48%; animation: capeFlow 3.4s ease-in-out infinite alternate; }
+.body-layer { z-index: 4; clip-path: polygon(34% 4%,70% 2%,75% 100%,31% 100%,29% 27%); transform-origin: 51% 88%; animation: bodyHover 4.2s ease-in-out infinite alternate; }
+.mech-front { z-index: 5; clip-path: polygon(0 0,43% 0,50% 100%,0 100%); transform-origin: 16% 35%; animation: mechFrontServo 4.8s cubic-bezier(.4,0,.6,1) infinite alternate; }
+.hair-layer { z-index: 6; clip-path: polygon(38% 3%,60% 2%,62% 38%,37% 38%); transform-origin: 49% 24%; animation: hairFloat 2.1s ease-in-out infinite alternate; filter: drop-shadow(0 0 9px rgba(200,240,255,.28)); }
 .mech-core { position: absolute; z-index: 7; width: 15px; height: 15px; border-radius: 50%; mix-blend-mode: screen; animation: corePulse 1.4s ease-in-out infinite; }
-.core-cyan { left: 55.5%; top: 27.5%; background: #7ef6ff; box-shadow: 0 0 12px 5px #25c9ff,0 0 46px 18px rgba(37,201,255,.45); }
-.core-pink { left: 43%; top: 53%; background: #ff5ba7; box-shadow: 0 0 12px 5px #ff2e9a,0 0 48px 18px rgba(255,46,154,.35); animation-delay: -.65s; }
+.core-cyan { left: 17%; top: 34%; background: #7ef6ff; box-shadow: 0 0 12px 5px #25c9ff,0 0 46px 18px rgba(37,201,255,.45); }
+.core-pink { left: 16%; top: 67%; background: #ff5ba7; box-shadow: 0 0 12px 5px #ff2e9a,0 0 48px 18px rgba(255,46,154,.35); animation-delay: -.65s; }
 .energy-orbit { position: absolute; z-index: 8; border: 1px solid rgba(80,229,255,.5); border-left-color: transparent; border-bottom-color: rgba(255,47,151,.6); border-radius: 50%; mix-blend-mode: screen; pointer-events:none; }
-.orbit-one { width: 34%; aspect-ratio: 1.8; left: 43%; top: 43%; transform: rotate(-11deg); animation: energyOrbit 5s linear infinite; }
-.orbit-two { width: 23%; aspect-ratio: 1.45; left: 53%; top: 32%; opacity: .6; transform: rotate(21deg); animation: energyOrbitReverse 4s linear infinite; }
+.orbit-one { width: 43%; aspect-ratio: 1.8; left: 10%; top: 43%; transform: rotate(-11deg); animation: energyOrbit 5s linear infinite; }
+.orbit-two { width: 28%; aspect-ratio: 1.45; left: 25%; top: 25%; opacity: .6; transform: rotate(21deg); animation: energyOrbitReverse 4s linear infinite; }
 .hero-sparks { position:absolute; inset:0; z-index:9; overflow:hidden; pointer-events:none; }
 .hero-sparks i { position:absolute; left:calc(42% + (var(--n, 0) * 3%)); top:72%; width:3px; height:16px; background:linear-gradient(transparent,#72f4ff); box-shadow:0 0 10px #3ae3ff; opacity:0; transform:rotate(24deg); animation:sparkRise 3.2s ease-out infinite; }
 .hero-sparks i:nth-child(1){--n:0;animation-delay:-.2s}.hero-sparks i:nth-child(2){--n:1;animation-delay:-1.4s}.hero-sparks i:nth-child(3){--n:2;animation-delay:-2.1s}.hero-sparks i:nth-child(4){--n:3;animation-delay:-.8s}.hero-sparks i:nth-child(5){--n:4;animation-delay:-2.8s}.hero-sparks i:nth-child(6){--n:5;animation-delay:-1.8s}.hero-sparks i:nth-child(7){--n:6;animation-delay:-.5s}.hero-sparks i:nth-child(8){--n:7;animation-delay:-2.4s}.hero-sparks i:nth-child(9){--n:8;animation-delay:-1.1s}.hero-sparks i:nth-child(10){--n:9;animation-delay:-3s}.hero-sparks i:nth-child(11){--n:10;animation-delay:-1.6s}.hero-sparks i:nth-child(12){--n:11;animation-delay:-.9s}
@@ -135,14 +135,14 @@ footer>a:last-child { color: #9fb2c5; }
   .hero { min-height: 790px; padding: 130px 24px 100px; align-items: end; }
   .hero::after { background: linear-gradient(0deg,#07101d 0%,rgba(3,11,23,.82) 39%,rgba(3,11,23,.12) 75%),linear-gradient(90deg,rgba(3,11,23,.55),transparent); }
   .hero-scene { inset: 0 0 15%; }
-  .scene-surface { background-size:auto 100%; background-position:68% center; }
-  .mech-rear { clip-path:polygon(0 8%,100% 10%,100% 82%,28% 86%,0 66%); }
-  .cape-layer { clip-path:polygon(0 34%,84% 33%,95% 73%,0 75%); }
-  .body-layer { clip-path:polygon(48% 24%,100% 24%,100% 96%,34% 96%,32% 43%); }
-  .mech-front { clip-path:polygon(0 7%,61% 8%,69% 88%,0 88%); }
-  .hair-layer { clip-path:polygon(54% 23%,91% 22%,92% 45%,51% 45%); }
-  .core-cyan { left:39%; top:27%; }.core-pink { left:12%; top:53%; }
-  .orbit-one { width:78%; left:8%; top:43%; }.orbit-two { width:56%; left:34%; top:31%; }
+  .scene-surface { background-size:auto 100%; background-position:52% center; }
+  .mech-rear { clip-path:polygon(0 0,100% 0,100% 90%,0 100%); }
+  .cape-layer { clip-path:polygon(0 25%,75% 18%,85% 85%,0 92%); }
+  .body-layer { clip-path:polygon(8% 3%,100% 3%,100% 100%,0 100%,0 25%); }
+  .mech-front { clip-path:polygon(0 0,35% 0,45% 100%,0 100%); }
+  .hair-layer { clip-path:polygon(10% 2%,70% 2%,74% 38%,8% 38%); }
+  .core-cyan { left:18%; top:34%; }.core-pink { left:10%; top:67%; }
+  .orbit-one { width:82%; left:4%; top:43%; }.orbit-two { width:58%; left:20%; top:25%; }
   h1 { font-size: clamp(48px,14vw,68px); }
   .hero-copy { font-size: 14px; }
   .hero-status { top: 95px; right: 20px; bottom: auto; }
