@@ -97,6 +97,8 @@ export default function Home() {
         <div className="rift rift-two" aria-hidden="true" />
         <div className="hero-content">
           <p className="eyebrow"><span /> AOV × HOK JUNGLE STREAMER</p>
+          <p className="hero-signature">YU.2008</p>
+          <p className="hero-tagline">穿越次元，掌控野區節奏</p>
           <h1>穿越次元<br /><em>掌控野區節奏</em></h1>
           <p className="hero-copy">主玩《傳說對決》與《王者榮耀》<br />排位實戰・打野觀念・直播互動</p>
           <div className="hero-socials" aria-label="社群平台連結">
