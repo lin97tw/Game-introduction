@@ -99,6 +99,15 @@ export default function Home() {
           <p className="eyebrow"><span /> AOV × HOK JUNGLE STREAMER</p>
           <h1>穿越次元<br /><em>掌控野區節奏</em></h1>
           <p className="hero-copy">主玩《傳說對決》與《王者榮耀》<br />排位實戰・打野觀念・直播互動</p>
+          <div className="hero-socials" aria-label="社群平台連結">
+            {socials.map((social) => (
+              <a key={social.name} className={`hero-social ${social.className}`} href={social.href} target="_blank" rel="noreferrer">
+                <span className="hero-social-mark">{social.mark}</span>
+                <span className="hero-social-name"><b>{social.name}</b><small>{social.handle}</small></span>
+                <span className="hero-social-arrow">↗</span>
+              </a>
+            ))}
+          </div>
           <div className="hero-actions">
             <a className="primary-button" href={socials[0].href} target="_blank" rel="noreferrer">
               前往 YouTube <span>↗</span>

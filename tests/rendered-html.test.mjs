@@ -44,6 +44,8 @@ test("keeps production assets and responsive behavior", async () => {
     access(new URL("../public/og-v2.png", import.meta.url)),
   ]);
   assert.match(page, /onPointerMove=\{moveScene\}/);
+  assert.match(page, /className="hero-socials"/);
+  assert.match(page, /socials\.map\(\(social\)/);
   assert.match(page, /pointerType === "touch"/);
   assert.match(css, /@media \(max-width: 850px\)/);
   assert.match(css, /@media \(max-width: 480px\)/);

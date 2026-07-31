@@ -58,7 +58,14 @@ h1,h2,h3,p { margin-top: 0; }
 h1 { margin-bottom: 28px; font-size: clamp(48px, 6.5vw, 102px); line-height: .98; letter-spacing: -.055em; font-weight: 900; text-shadow: 0 8px 40px #000; }
 h1 em,.links-intro em { color: transparent; font-style: normal; -webkit-text-stroke: 1px rgba(111,229,255,.8); text-shadow: 0 0 30px rgba(70,230,255,.18); }
 .hero-copy { color: #bdcad8; font-size: clamp(15px, 1.3vw, 19px); line-height: 1.85; letter-spacing: .08em; }
-.hero-actions { display: flex; gap: 26px; align-items: center; margin-top: 42px; }
+.hero-socials { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; width:min(680px,100%); margin-top:34px; }
+.hero-social { display:grid; grid-template-columns:36px 1fr 16px; align-items:center; gap:10px; min-height:66px; padding:10px 12px; border:1px solid rgba(145,182,210,.28); background:rgba(5,15,28,.68); backdrop-filter:blur(12px); transition:transform .2s,border-color .2s,background .2s; }
+.hero-social:hover { transform:translateY(-4px); border-color:var(--cyan); background:rgba(8,27,44,.84); }
+.hero-social-mark { display:grid; place-items:center; width:34px; height:34px; color:var(--cyan); border:1px solid rgba(70,230,255,.48); font-size:10px; font-weight:900; }
+.hero-social-name { display:grid; gap:3px; min-width:0; }.hero-social-name b { font-size:13px; }.hero-social-name small { overflow:hidden; color:#8298ad; font-size:9px; text-overflow:ellipsis; white-space:nowrap; }
+.hero-social-arrow { color:var(--cyan); font-size:15px; }
+.hero-social.youtube:hover .hero-social-mark { color:#ff5361;border-color:#ff5361 }.hero-social.instagram:hover .hero-social-mark { color:#ff70ba;border-color:#ff70ba }
+.hero-actions { display:none; }
 .primary-button { position: relative; overflow: hidden; display: inline-flex; justify-content: space-between; gap: 38px; min-width: 205px; padding: 17px 20px; color: #03111a; background: var(--cyan); font-weight: 800; font-size: 14px; box-shadow: 0 0 28px rgba(70,230,255,.23); transition: transform .2s, box-shadow .2s; }
 .primary-button:hover { transform: translateY(-3px); box-shadow: 0 0 42px rgba(70,230,255,.42); }
 .text-button { padding: 12px 0; color: #d8e3ed; font-size: 13px; border-bottom: 1px solid #607083; }
@@ -153,6 +160,9 @@ footer>a:last-child { color: #9fb2c5; }
 
 @media (max-width: 480px) {
   .brand { font-size: 12px; }.brand-glyph { width: 30px; height: 30px; }
+  .hero-socials { gap:6px; margin-top:22px; }
+  .hero-social { grid-template-columns:26px 1fr 12px; gap:5px; min-height:50px; padding:7px; }
+  .hero-social-mark { width:26px; height:26px; font-size:8px; }.hero-social-name b { font-size:10px; }.hero-social-name small { display:none; }.hero-social-arrow { font-size:12px; }
   .hero-actions { align-items: stretch; flex-direction: column; gap: 12px; }.primary-button { width: 100%; }.text-button { align-self: flex-start; }
   .about-heading h2,.section-title-row h2,.live-banner h2 { font-size: 34px; }
   .game-card { padding: 24px; }.card-content { left: 24px; bottom: 22px; }.game-card h3 { font-size: 29px; }
