@@ -34,13 +34,26 @@ export default function Home() {
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = (event.clientX - bounds.left) / bounds.width - 0.5;
     const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-    sceneRef.current?.style.setProperty("--mx", `${x * 18}px`);
-    sceneRef.current?.style.setProperty("--my", `${y * 12}px`);
+    const scene = sceneRef.current?.style;
+    scene?.setProperty("--bg-x", `${x * -7}px`);
+    scene?.setProperty("--bg-y", `${y * -5}px`);
+    scene?.setProperty("--rear-x", `${x * -14}px`);
+    scene?.setProperty("--rear-y", `${y * -9}px`);
+    scene?.setProperty("--cape-x", `${x * -17}px`);
+    scene?.setProperty("--cape-y", `${y * -11}px`);
+    scene?.setProperty("--body-x", `${x * -21}px`);
+    scene?.setProperty("--body-y", `${y * -14}px`);
+    scene?.setProperty("--front-x", `${x * -24}px`);
+    scene?.setProperty("--front-y", `${y * -17}px`);
+    scene?.setProperty("--hair-x", `${x * -28}px`);
+    scene?.setProperty("--hair-y", `${y * -20}px`);
+    scene?.setProperty("--grid-x", `${x * 6}px`);
+    scene?.setProperty("--grid-y", `${y * 4}px`);
   }
 
   function resetScene() {
-    sceneRef.current?.style.setProperty("--mx", "0px");
-    sceneRef.current?.style.setProperty("--my", "0px");
+    const scene = sceneRef.current?.style;
+    ["--bg-x", "--bg-y", "--rear-x", "--rear-y", "--cape-x", "--cape-y", "--body-x", "--body-y", "--front-x", "--front-y", "--hair-x", "--hair-y", "--grid-x", "--grid-y"].forEach((property) => scene?.setProperty(property, "0px"));
   }
 
   return (
@@ -64,7 +77,21 @@ export default function Home() {
         onPointerMove={moveScene}
         onPointerLeave={resetScene}
       >
-        <div className="hero-image" aria-hidden="true" />
+        <div className="hero-scene" aria-hidden="true">
+          <div className="scene-surface scene-background" />
+          <div className="scene-surface scene-layer mech-rear" />
+          <div className="scene-surface scene-layer cape-layer" />
+          <div className="scene-surface scene-layer body-layer" />
+          <div className="scene-surface scene-layer mech-front" />
+          <div className="scene-surface scene-layer hair-layer" />
+          <div className="mech-core core-cyan" />
+          <div className="mech-core core-pink" />
+          <div className="energy-orbit orbit-one" />
+          <div className="energy-orbit orbit-two" />
+          <div className="hero-sparks">
+            {Array.from({ length: 12 }).map((_, index) => <i key={index} />)}
+          </div>
+        </div>
         <div className="hero-grid" aria-hidden="true" />
         <div className="rift rift-one" aria-hidden="true" />
         <div className="rift rift-two" aria-hidden="true" />
